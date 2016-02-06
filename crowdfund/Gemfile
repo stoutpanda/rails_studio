@@ -38,3 +38,14 @@ gem 'spring',        group: :development
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+# testing tools rspec and capybara.
+group :test, :development do
+  gem "rspec-rails", "3.4.2"
+end
+
+group :test do
+  gem "capybara", "2.6.2"
+end
+
+#tzinfo-data for full windows support.
+gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw]
