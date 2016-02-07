@@ -1,0 +1,6 @@
+<%= content_tag( :h1, pluralize(@projects.size, 'Project')) %>
+<ul>
+<% @projects.each do |project| %>
+<%= content_tag(:li, "#{project}") %>
+<% end %>
+</ul>
