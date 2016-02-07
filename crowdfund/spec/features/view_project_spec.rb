@@ -1,6 +1,6 @@
 require 'rails_helper'
 describe "Viewing an indidvidual project" do
-  it "shows a project" do
+  it "views a project" do
 
     project = Project.create(name: "Torgier's Highwire Cat Extravaganza!",
                               description: "This cat knows food and fun, but mostly just food. Cheese. Cheese. Cheese.",
