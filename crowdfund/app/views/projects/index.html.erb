@@ -1,6 +1,27 @@
 <%= content_tag( :h1, pluralize(@projects.size, 'Project')) %>
-<ul>
+
 <% @projects.each do |project| %>
-<%= content_tag(:li, "#{project}") %>
+  <article>
+    <header>
+      <h2><%= project.name %></h2>
+    </header>
+    <p>
+      <%= truncate(project.description, length: 40, separator: ' ') %>
+    </p>
+    <table>
+      <tr>
+        <td>Pledging Ends On:</td>
+          <td><%= project.pledging_ends_on %></td>
+      </tr>
+      <tr>
+        <td> Target Pledge Amount: </td>
+        <td><%= number_to_currency(project.target_pledge_amount) %></td>
+      </tr>
+      <tr>
+        <td>Website:</td>
+        <td><%= project.website %></td>
+      </tr>
+
+    </table>
+  </article>
 <% end %>
-</ul>
