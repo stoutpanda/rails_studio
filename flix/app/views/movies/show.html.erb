@@ -19,8 +19,10 @@
         <th>Total Gross:</th>
         <td><%= format_total_gross(@movie) %></td>
       </tr>
+      <tr><td><br></td></tr>
       <tr>
-        <td> <%= link_to( "All Movies", movies_path ) %>  </td>
+        <td> <%= link_to("Edit", edit_movie_path) %> </td>
+        <td> <%= link_to( "All Movies", movies_path) %>  </td>
       </tr>
     </table>
   </article>
