@@ -10,7 +10,6 @@ def movie_attributes(overrides = {})
     duration: "126 min",
     image_file_name: "ironman.jpg"
   }.merge(overrides)
-<<<<<<< HEAD:spec/support/attributes.rb
 end
 
 def review_attributes(overrides = {})
@@ -19,6 +18,4 @@ def review_attributes(overrides = {})
     stars: 3,
     comment: "I laughed, I cried, I spilled my popcorn!"
   }.merge(overrides)
-=======
->>>>>>> b655a3939e83d2aabce60567ad115a5da5339a63:flix/spec/support/attributes.rb
 end
