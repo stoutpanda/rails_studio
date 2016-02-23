@@ -1,7 +1,5 @@
-<article>
-<header>
-<%= content_tag(:h1,"Editing: #{@movie.title}") %>
+<header id="content-header">
+  <h1>Editing <%= @movie.title %></h1>
 </header>
-<%= render('form') %>
-</article>
-<%= render 'footer' %>
+
+<%= render 'form' %>

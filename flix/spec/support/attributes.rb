@@ -1,4 +1,3 @@
-
 def movie_attributes(overrides = {})
   {
     title: "Iron Man",
@@ -10,5 +9,13 @@ def movie_attributes(overrides = {})
     director: "Jon Favreau",
     duration: "126 min",
     image_file_name: "ironman.jpg"
+  }.merge(overrides)
+end
+
+def review_attributes(overrides = {})
+  {
+    name: "Roger Ebert",
+    stars: 3,
+    comment: "I laughed, I cried, I spilled my popcorn!"
   }.merge(overrides)
 end
