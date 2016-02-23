@@ -23,6 +23,7 @@ describe "Editing a movie" do
     expect(page).to have_text('Movie successfully updated!')
   end
   
+<<<<<<< HEAD:spec/features/edit_movie_spec.rb
   it "does not update the movie if it's invalid" do
     movie = Movie.create(movie_attributes)
     
@@ -34,4 +35,6 @@ describe "Editing a movie" do
         
     expect(page).to have_text('error')
   end
+=======
+>>>>>>> b655a3939e83d2aabce60567ad115a5da5339a63:flix/spec/features/edit_movie_spec.rb
 end
