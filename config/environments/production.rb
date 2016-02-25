@@ -2,6 +2,18 @@ Rails.application.configure do
   config.secret_key_base = ENV["SECRET_KEY_BASE"]
   # Settings specified here will take precedence over those in config/application.rb.
 
+  #paperclip production to use S3 for image storage
+  config.paperclip_defaults = {
+  :storage => :s3,
+  :url => ':s3_domain_url',
+  :path => '/:class/:attachment/:id_partition/:style/:filename',
+  :s3_credentials => {
+    :bucket => ENV['AWS_BUCKET'],
+    :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
+    :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
+  }
+}
+
   # Code is not reloaded between requests.
   config.cache_classes = true
 
