@@ -1,7 +1,10 @@
 class Movie < ActiveRecord::Base
   has_many :reviews, dependent: :destroy
-  
-  has_attached_file :image
+
+  has_attached_file :image, styles: {
+  small: "90x133>",
+  thumb: "50x50>"
+}
 
   validates :title, :released_on, :duration, presence: true
 
