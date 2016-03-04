@@ -3,7 +3,8 @@ require 'spec_helper'
 describe "Viewing the list of movies" do
 
   it "shows the movies" do
-    movie1 = Movie.create(title: "Iron Man",
+    movie1 = Movie.create(
+                          title: "Iron Man",
                           rating: "PG-13",
                           total_gross: 318412101.00,
                           description: "Tony Stark builds an armored suit to fight the throes of evil",
@@ -12,8 +13,10 @@ describe "Viewing the list of movies" do
                           director: "Jon Favreau",
                           duration: "126 min",
                           image: open("#{Rails.root}/app/assets/images/ironman.jpg")
+                          )
 
-    movie2 = Movie.create(title: "Superman",
+    movie2 = Movie.create(
+                          title: "Superman",
                           rating: "PG",
                           total_gross: 134218018.00,
                           description: "Clark Kent grows up to be the greatest super-hero",
@@ -22,8 +25,10 @@ describe "Viewing the list of movies" do
                           director: "Richard Donner",
                           duration: "143 min",
                           image: open("#{Rails.root}/app/assets/images/superman.jpg")
+                          )
 
-    movie3 = Movie.create(title: "Spider-Man",
+    movie3 = Movie.create(
+                          title: "Spider-Man",
                           rating: "PG-13",
                           total_gross: 403706375.00,
                           description: "Peter Parker gets bit by a genetically modified spider",
@@ -32,6 +37,7 @@ describe "Viewing the list of movies" do
                           director: "Sam Raimi",
                           duration: "121 min",
                           image: open("#{Rails.root}/app/assets/images/spiderman.jpg")
+                          )
 
     visit movies_url
 
