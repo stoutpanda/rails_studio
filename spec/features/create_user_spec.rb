@@ -1,6 +1,6 @@
 # put this in the new file spec/features/create_user_spec.rb
 
-require 'rails_helper'
+require 'spec_helper'
 
 describe "Creating a new user" do
   it "saves the user and shows the user's profile page" do
@@ -27,7 +27,7 @@ describe "Creating a new user" do
     visit signup_url
 
     expect {
-      click_button 'Create User'
+      click_button 'Create Account'
     }.not_to change(User, :count)
 
     expect(page).to have_text('error')
