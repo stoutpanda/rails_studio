@@ -31,5 +31,11 @@ describe "Creating a new user" do
     }.not_to change(User, :count)
 
     expect(page).to have_text('error')
+    it "saves the user and shows the user's profile page" do
+  # existing code
+
+  expect(page).not_to have_link('Sign In')
+  expect(page).not_to have_link('Sign Up')
+end
   end
 end
