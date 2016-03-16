@@ -9,20 +9,13 @@ describe "A review" do
 
     expect(review.movie).to eq(movie)
   end
-  
+
   it "with example attributes is valid" do
     review = Review.new(review_attributes)
-    
+
     expect(review.valid?).to eq(true)
   end
 
-  it "requires a name" do
-    review = Review.new(name: "")
-
-    review.valid? # populates errors
-    
-    expect(review.errors[:name].any?).to eq(true)
-  end
 
   it "requires a comment" do
     review = Review.new(comment: "")
@@ -31,10 +24,10 @@ describe "A review" do
 
     expect(review.errors[:comment].any?).to eq(true)
   end
-  
+
   it "requires a comment over 3 characters" do
     review = Review.new(comment: "X" * 3)
-    
+
     review.valid?
 
     expect(review.errors[:comment].any?).to eq(true)
