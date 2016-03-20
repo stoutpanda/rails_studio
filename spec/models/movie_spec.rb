@@ -160,15 +160,27 @@ describe "A movie" do
       movie.destroy
     }.to change(Review, :count).by(-1)
   end
-  
+
   it "calculates the average number of review stars" do
     movie = Movie.create(movie_attributes)
 
     movie.reviews.create(review_attributes(stars: 1))
     movie.reviews.create(review_attributes(stars: 3))
     movie.reviews.create(review_attributes(stars: 5))
-    
+
     expect(movie.average_stars).to eq(3)
+  end
+
+  it "has fans" do
+  movie = Movie.new(movie_attributes)
+  fan1 = User.new(user_attributes(email: "larry@example.com"))
+  fan2 = User.new(user_attributes(email: "moe@example.com"))
+
+  movie.favorites.new(user: fan1)
+  movie.favorites.new(user: fan2)
+
+  expect(movie.fans).to include(fan1)
+  expect(movie.fans).to include(fan2)
   end
 
 end
