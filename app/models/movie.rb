@@ -1,5 +1,7 @@
 class Movie < ActiveRecord::Base
   has_many :reviews, dependent: :destroy
+  has_many :favorites, dependent: :destroy
+  has_many :fans, through: :favorites, source: :user
 
   has_attached_file :image, styles: {
   small: "90x133>",
