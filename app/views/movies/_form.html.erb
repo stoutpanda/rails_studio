@@ -27,11 +27,8 @@
         <%= f.text_field :duration, size: 10 %>
       </li>
       <li class="required">
-        <%= f.label :image %>
-        <%= f.file_field :image %>
-      </li>
-      <li>
-        <%= image_for(@movie) %>
+        <%= f.label :image_file_name %>
+        <%= f.text_field :image_file_name %>
       </li>
       <li>
         <%= f.label :cast %>
@@ -40,6 +37,9 @@
       <li>
         <%= f.label :director %>
         <%= f.text_field :director %>
+      </li>
+      <li>
+        <%= f.collection_check_boxes(:genre_ids, Genre.all, :id, :name) %>
       </li>
     </ol>
     <p>

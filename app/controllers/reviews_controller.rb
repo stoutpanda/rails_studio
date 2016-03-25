@@ -11,7 +11,6 @@ class ReviewsController < ApplicationController
   end
 
   def create
-
     @review = @movie.reviews.new(review_params)
     @review.user = current_user
     if @review.save
@@ -21,13 +20,7 @@ class ReviewsController < ApplicationController
       render :new
     end
   end
-
-  def destroy
-    @review = @movie.reviews.find(params[:id])
-    @review.destroy
-    redirect_to movie_reviews_path(@movie), notice: "Review successfully deleted!"
-  end
-
+  
 private
 
   def review_params
@@ -35,7 +28,7 @@ private
   end
 
   def set_movie
-    @movie = Movie.find(params[:movie_id])
+    @movie = Movie.find_by!(slug: params[:movie_id])    
   end
 
 end

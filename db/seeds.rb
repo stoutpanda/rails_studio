@@ -9,10 +9,10 @@
 Movie.create!([
   {
     title: 'Iron Man',
-    description:
+    description: 
     %{
-      When wealthy industrialist Tony Stark is forced to build an
-      armored suit after a life-threatening incident, he ultimately
+      When wealthy industrialist Tony Stark is forced to build an 
+      armored suit after a life-threatening incident, he ultimately 
       decides to use its technology to fight against evil.
     }.squish,
     image_file_name: 'ironman.jpg',
@@ -25,10 +25,10 @@ Movie.create!([
   },
   {
     title: 'Superman',
-    description:
+    description: 
     %{
-      An alien orphan is sent from his dying planet to Earth, where
-      he grows up to become his adoptive home's first and greatest
+      An alien orphan is sent from his dying planet to Earth, where 
+      he grows up to become his adoptive home's first and greatest 
       super-hero.
     }.squish,
     image_file_name: 'superman.jpg',
@@ -41,11 +41,11 @@ Movie.create!([
   },
   {
     title: 'Spider-Man',
-    description:
+    description: 
     %{
-      When bitten by a genetically modified spider, a nerdy, shy, and
-      awkward high school student gains spider-like abilities that he
-      eventually must use to fight evil as a superhero after tragedy
+      When bitten by a genetically modified spider, a nerdy, shy, and 
+      awkward high school student gains spider-like abilities that he 
+      eventually must use to fight evil as a superhero after tragedy 
       befalls his family.
     }.squish,
     image_file_name: 'spiderman.jpg',
@@ -58,9 +58,9 @@ Movie.create!([
   },
   {
     title: 'Batman',
-    description:
+    description: 
     %{
-      The Dark Knight of Gotham City begins his war on crime with his
+      The Dark Knight of Gotham City begins his war on crime with his 
       first major enemy being the clownishly homicidal Joker.
     }.squish,
     image_file_name: 'batman.jpg',
@@ -73,10 +73,10 @@ Movie.create!([
   },
   {
     title: "Catwoman",
-    description:
+    description: 
     %{
-      Patience Philips seems destined to spend her life apologizing for taking up space.
-      Despite her artistic ability&mdash;she has a more than respectable career as a graphic
+      Patience Philips seems destined to spend her life apologizing for taking up space. 
+      Despite her artistic ability&mdash;she has a more than respectable career as a graphic 
       designer.
     }.squish,
     image_file_name: "catwoman.jpg",
@@ -89,7 +89,7 @@ Movie.create!([
   },
   {
     title: 'Batman vs. Godzilla',
-    description:
+    description: 
     %{
       An epic battle between The Caped Crusader and the fire-breathing dinosaur Gojira.
       Hang on to your popcorn, kids!
@@ -108,26 +108,26 @@ User.create!([
   {
     name: "Roger Ebert",
     email: "roger@example.com",
-    password: "Secret10CharLimit",
-    password_confirmation: "Secret10CharLimit"
+    password: "secret",
+    password_confirmation: "secret"
   },
   {
     name: "Gene Siskel",
     email: "gene@example.com",
-    password: "Secret10CharLimit",
-    password_confirmation: "Secret10CharLimit"
+    password: "secret",
+    password_confirmation: "secret"
   },
   {
     name: "Peter Travers",
     email: "peter@example.com",
-    password: "Secret10CharLimit",
-    password_confirmation: "Secret10CharLimit"
+    password: "secret",
+    password_confirmation: "secret"
   },
   {
     name: "Elvis Mitchell",
     email: "elvis@example.com",
-    password: "Secret10CharLimit",
-    password_confirmation: "Secret10CharLimit"
+    password: "secret",
+    password_confirmation: "secret"
   }
 ])
 
@@ -136,11 +136,35 @@ gene = User.find_by(name: "Gene Siskel")
 peter = User.find_by(name: "Peter Travers")
 elvis = User.find_by(name: "Elvis Mitchell")
 
+action = Genre.create!(name: "Action")
+comedy = Genre.create!(name: "Comedy")
+drama = Genre.create!(name: "Drama")
+romance = Genre.create!(name: "Romance")
+thriller = Genre.create!(name: "Thriller")
+fantasy = Genre.create!(name: "Fantasy")
+documentary = Genre.create!(name: "Documentary")
+adventure = Genre.create!(name: "Adventure")
+animation = Genre.create!(name: "Animation")
+scifi = Genre.create!(name: "Sci-Fi")
+
 movie = Movie.find_by(title: 'Iron Man')
 movie.reviews.create!(user: roger, stars: 3, comment: "I laughed, I cried, I spilled my popcorn!")
 movie.reviews.create!(user: gene, stars: 5, comment: "I'm a better reviewer than he is.")
 movie.reviews.create!(user: peter, stars: 4, comment: "It's been years since a movie superhero was this fierce and this funny.")
+movie.fans << roger
+movie.fans << gene
+movie.fans << elvis
+movie.genres = [action, adventure, scifi]
+
 movie = Movie.find_by(title: 'Superman')
 movie.reviews.create!(user: elvis, stars: 5, comment: "It's a bird, it's a plane, it's a blockbuster!")
+movie.genres = [action, fantasy, scifi]
 
-movie = Movie.find_by(title: 'Iron Man')
+movie = Movie.find_by(title: 'Spider-Man')
+movie.genres = [action, fantasy]
+
+movie = Movie.find_by(title: 'Batman')
+movie.genres = [action, thriller]
+
+movie = Movie.find_by(title: 'Catwoman')
+movie.genres = [action, fantasy]
