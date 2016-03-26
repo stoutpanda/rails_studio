@@ -9,7 +9,10 @@ class Movie < ActiveRecord::Base
   has_many :characterizations, dependent: :destroy
   has_many :genres, through: :characterizations
 
-  has_attached_file :image
+  has_attached_file :image, styles: {
+  small: "90x133>",
+  thumb: "50x50>"
+  } 
 
   validates :title, presence: true, uniqueness: true
   validates :slug, presence: true, uniqueness: true
