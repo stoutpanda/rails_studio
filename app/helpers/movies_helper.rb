@@ -8,19 +8,19 @@ module MoviesHelper
   end
 
   def image_for(movie)
-    if movie.image_file_name.blank?
-      image_tag('placeholder.png')
+    if movie.image.exists?
+      image_tag(movie.image.url)
     else
-      image_tag(movie.image_file_name)
+      image_tag('placeholder.png')
     end
   end
 
-  def format_average_stars(movie)   
+  def format_average_stars(movie)
     if movie.average_stars.nil?
       content_tag(:strong, 'No reviews')
     else
       pluralize(number_with_precision(movie.average_stars, precision: 1) , 'star')
     end
   end
-   
+
 end

@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-# ruby '2.0.0'
+ruby '2.3.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.9'
@@ -8,9 +8,12 @@ group :development, :test do
   gem 'sqlite3'
 end
 
-# group :production do
-#   gem 'pg'
-# end
+group :production do
+  gem 'pg'
+end
+#adding aws for images
+gem 'paperclip', "4.3.2"
+gem 'aws-sdk', '< 2.0'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'

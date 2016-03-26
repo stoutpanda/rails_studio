@@ -4,7 +4,7 @@ class MoviesController < ApplicationController
   before_action :set_movie, only: [:show, :edit, :update, :destroy]
 
   def index
-    case params[:scope] 
+    case params[:scope]
     when 'hits'
       @movies = Movie.hits
     when 'flops'
@@ -22,17 +22,17 @@ class MoviesController < ApplicationController
 
   def show
     @fans = @movie.fans
-    
+
     if current_user
       @current_favorite = current_user.favorites.find_by(movie_id: @movie.id)
     end
-    
+
     @genres = @movie.genres
   end
-  
+
   def edit
   end
-  
+
   def update
     if @movie.update(movie_params)
       redirect_to @movie, notice: "Movie successfully updated!"
@@ -44,7 +44,7 @@ class MoviesController < ApplicationController
   def new
     @movie = Movie.new
   end
-  
+
   def create
     @movie = Movie.new(movie_params)
     if @movie.save
@@ -53,18 +53,18 @@ class MoviesController < ApplicationController
       render :new
     end
   end
-  
+
   def destroy
     @movie.destroy
     redirect_to movies_url, alert: "Movie successfully deleted!"
   end
-  
+
 private
 
   def movie_params
-    params.require(:movie).permit(:title, :description, :rating, :released_on, :total_gross, :cast, :director, :duration, :image_file_name, genre_ids: [])
+    params.require(:movie).permit(:title, :description, :rating, :released_on, :total_gross, :cast, :director, :duration, :image, genre_ids: [])
   end
-  
+
   def movies_scope
    if params[:scope].in? %w(hits flops upcoming recent rated)
      params[:scope]
@@ -72,9 +72,8 @@ private
      :released
    end
   end
-  
+
   def set_movie
     @movie = Movie.find_by!(slug: params[:id])
   end
 end
-
