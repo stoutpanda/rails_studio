@@ -9,9 +9,9 @@ module MoviesHelper
 
   def image_for(movie)
     if movie.image.exists?
-      image_tag(movie.image.url(:small))
+      link_to(image_tag(movie.image.url(:small)), movie)
     else
-      image_tag('placeholder.png')
+      link_to(image_tag('placeholder.png'), movie)
     end
   end
 
