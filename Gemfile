@@ -7,14 +7,10 @@ ruby '2.3.0'
 gem 'rails', '4.1.9'
 
 gem 'puma'
-
-group :development, :test do
-  gem 'sqlite3'
-end
+gem 'pg'
 
 group :production do
   gem 'rails_12factor'
-  gem 'pg'
 end
 #adding aws for images
 gem 'paperclip', "4.3.2"
