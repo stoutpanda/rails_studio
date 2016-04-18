@@ -23,6 +23,7 @@ module Flix
 
     #adding for rails 4.2.6
     config.active_record.raise_in_transactional_callbacks = true
+    config.active_support.test_order = :sorted
 
     config.generators do |g|
       g.test_framework false
