@@ -12,7 +12,7 @@ class Movie < ActiveRecord::Base
   has_attached_file :image, styles: {
   small: "90x133>",
   thumb: "50x50>"
-  } 
+  }
 
   validates :title, presence: true, uniqueness: true
   validates :slug, presence: true, uniqueness: true
@@ -31,7 +31,7 @@ class Movie < ActiveRecord::Base
 
   validates :rating, inclusion: { in: RATINGS }
 
-  scope :released, -> { where("released_on <= ?", Time.now).order(released_on: :desc) }
+  scope :released, -> { where("released_on <= ?", Time.now).order(released_on: :desc, id: :desc) }
   scope :hits, -> { released.where('total_gross >= 300000000').order(total_gross: :desc) }
   scope :flops, -> { released.where('total_gross < 50000000').order(total_gross: :asc) }
   scope :upcoming, -> { where("released_on > ?", Time.now).order(released_on: :asc) }
