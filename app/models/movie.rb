@@ -1,4 +1,4 @@
-class Movie < ActiveRecord::Base
+sclass Movie < ActiveRecord::Base
   has_many :reviews, dependent: :destroy
 
   has_many :critics, through: :reviews, source: :user
