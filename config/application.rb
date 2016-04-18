@@ -22,11 +22,14 @@ module Flix
     # config.i18n.default_locale = :de
 
     #adding for rails 4.2.6
-    config.active_record.raise_in_transactional_callbacks = true
     config.active_support.test_order = :sorted
 
+    #adding for rails 5.0.0beta3
+    ActiveSupport.halt_callback_chains_on_return_false = false
+	
     config.generators do |g|
       g.test_framework false
+
     end
   end
 end
