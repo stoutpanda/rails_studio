@@ -4,7 +4,8 @@ source 'https://rubygems.org'
 ruby '2.3.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.1.9'
+gem 'rails', '4.2.6'
+
 
 gem 'puma'
 gem 'pg'
@@ -42,6 +43,7 @@ gem 'bcrypt', '~> 3.1.7'
 
 group :test, :development do
   gem "rspec-rails", "3.4.2"
+  gem 'web-console', '~> 2.0'
 end
 
 group :test do

@@ -8,6 +8,7 @@ Bundler.require(*Rails.groups)
 
 module Flix
   class Application < Rails::Application
+
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
@@ -19,7 +20,10 @@ module Flix
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
-    
+
+    #adding for rails 4.2.6
+    config.active_record.raise_in_transactional_callbacks = true
+
     config.generators do |g|
       g.test_framework false
     end
