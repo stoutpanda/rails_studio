@@ -29,7 +29,7 @@ describe "Creating a new movie" do
     check(@genre1.name)
     check(@genre2.name)
 
-    click_button 'Create Movie'
+    click_button 'Create movie'
 
     expect(current_path).to eq(movie_path(Movie.last))
 
@@ -44,7 +44,7 @@ describe "Creating a new movie" do
     visit new_movie_url
 
     expect {
-      click_button 'Create Movie'
+      click_button('Create movie')
     }.not_to change(Movie, :count)
 
     expect(page).to have_text('error')
