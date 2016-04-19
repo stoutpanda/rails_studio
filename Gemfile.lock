@@ -1,12 +1,3 @@
-GIT
-  remote: https://github.com/rails/rails-controller-testing
-  revision: 24dd0199536c26370979416280260978183a0c3e
-  specs:
-    rails-controller-testing (0.1.1)
-      actionpack (~> 5.x)
-      actionview (~> 5.x)
-      activesupport (~> 5.x)
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -133,6 +124,10 @@ GEM
       bundler (>= 1.3.0, < 2.0)
       railties (= 5.0.0.beta3)
       sprockets-rails (>= 2.0.0)
+    rails-controller-testing (0.1.1)
+      actionpack (~> 5.x)
+      actionview (~> 5.x)
+      activesupport (~> 5.x)
     rails-deprecated_sanitizer (1.0.3)
       activesupport (>= 4.2.0.alpha)
     rails-dom-testing (1.0.7)
@@ -219,7 +214,7 @@ DEPENDENCIES
   pg
   puma
   rails (= 5.0.0beta3)
-  rails-controller-testing!
+  rails-controller-testing
   rails_12factor
   rspec-rails (= 3.5.0.beta3)
   sass-rails (~> 6.0.0.beta1)

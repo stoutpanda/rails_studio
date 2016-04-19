@@ -39,7 +39,7 @@ group :production do
 end
 group :test, :development do
   gem 'rspec-rails', '3.5.0.beta3'  	
-  gem "rails-controller-testing", :git => "https://github.com/rails/rails-controller-testing"	
+  gem "rails-controller-testing"	
 end
 
 group :development do
