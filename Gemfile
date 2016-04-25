@@ -9,6 +9,11 @@ gem 'rails', '5.0.0beta3'
 gem 'puma'
 gem 'pg'
 
+#Redis server
+gem 'redis-rack', github: 'redis-store/redis-rack', branch: 'master'
+gem 'redis-actionpack', github: 'redis-store/redis-actionpack', branch: 'master'
+gem 'redis-rails', github: 'redis-store/redis-rails', branch: 'master'
+
 #adding aws for images
 gem 'paperclip', "5.0.0.beta1"
 gem 'aws-sdk', '< 2.10.2'

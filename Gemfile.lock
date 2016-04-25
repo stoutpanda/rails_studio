@@ -1,3 +1,32 @@
+GIT
+  remote: git://github.com/redis-store/redis-actionpack.git
+  revision: ff80a6f4d681eba097905176e1e75fab38d67e65
+  branch: master
+  specs:
+    redis-actionpack (4.0.1)
+      actionpack (>= 4.0.0, < 6)
+      redis-rack (~> 1.5.0)
+      redis-store (~> 1.1.0)
+
+GIT
+  remote: git://github.com/redis-store/redis-rack.git
+  revision: 83a7b7b895bb528c1ae88329e4bca09a97d9fbbf
+  branch: master
+  specs:
+    redis-rack (1.5.0)
+      rack (> 1.5, < 3)
+      redis-store (~> 1.1.0)
+
+GIT
+  remote: git://github.com/redis-store/redis-rails.git
+  revision: bb9e202da4c9d9d4d927e4531f98e2db4e2dc657
+  branch: master
+  specs:
+    redis-rails (5.0.0)
+      redis-actionpack (>= 4, < 5.1)
+      redis-activesupport (>= 4, < 5.1)
+      redis-store (~> 1.1.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -40,12 +69,12 @@ GEM
       tzinfo (~> 1.1)
     addressable (2.4.0)
     arel (7.0.0)
-    aws-sdk (2.2.34)
-      aws-sdk-resources (= 2.2.34)
-    aws-sdk-core (2.2.34)
+    aws-sdk (2.2.36)
+      aws-sdk-resources (= 2.2.36)
+    aws-sdk-core (2.2.36)
       jmespath (~> 1.0)
-    aws-sdk-resources (2.2.34)
-      aws-sdk-core (= 2.2.34)
+    aws-sdk-resources (2.2.36)
+      aws-sdk-core (= 2.2.36)
     bcrypt (3.1.11)
     builder (3.2.2)
     capybara (2.7.0)
@@ -96,7 +125,7 @@ GEM
     mimemagic (0.3.1)
     mini_portile2 (2.0.0)
     minitest (5.8.4)
-    multi_json (1.11.2)
+    multi_json (1.11.3)
     nio4r (1.2.1)
     nokogiri (1.6.7.2)
       mini_portile2 (~> 2.0.0.rc2)
@@ -150,6 +179,12 @@ GEM
     rake (11.1.2)
     rdoc (4.2.2)
       json (~> 1.4)
+    redis (3.3.0)
+    redis-activesupport (4.1.5)
+      activesupport (>= 3, < 5)
+      redis-store (~> 1.1.0)
+    redis-store (1.1.7)
+      redis (>= 2.2)
     rspec-core (3.5.0.beta3)
       rspec-support (= 3.5.0.beta3)
     rspec-expectations (3.5.0.beta3)
@@ -216,6 +251,9 @@ DEPENDENCIES
   rails (= 5.0.0beta3)
   rails-controller-testing
   rails_12factor
+  redis-actionpack!
+  redis-rack!
+  redis-rails!
   rspec-rails (= 3.5.0.beta3)
   sass-rails (~> 6.0.0.beta1)
   sdoc (~> 0.4.0)
